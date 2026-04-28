@@ -15,6 +15,7 @@
       --navy: #0b1f3a;
       --white: #ffffff;
       --light-bg: #f7f9fc;
+      --soft-blue: #eef4fb;
       --text-dark: #1f2937;
       --text-muted: #5f6b7a;
       --border-light: #e5e7eb;
@@ -84,7 +85,7 @@
       align-items: center;
     }
 
-    /* Hero Section */
+    /* Home Hero Section */
     .hero {
       background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
       min-height: calc(100vh - 75px);
@@ -126,6 +127,9 @@
       border-radius: 999px;
       box-shadow: 0 8px 20px rgba(11, 31, 58, 0.18);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
 
     .primary-button:hover {
@@ -133,6 +137,121 @@
       box-shadow: 0 12px 26px rgba(11, 31, 58, 0.24);
     }
 
+    /* About Page */
+    .about-section {
+      background-color: var(--white);
+      padding: 90px 48px;
+      text-align: left;
+    }
+
+    .about-container {
+      max-width: 1180px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .resume-placeholder {
+      background: var(--soft-blue);
+      border-radius: 26px;
+      padding: 34px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 560px;
+    }
+
+    .resume-card {
+      width: 100%;
+      max-width: 390px;
+      background: var(--white);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+      border: 1px solid var(--border-light);
+    }
+
+    .resume-header {
+      height: 26px;
+      width: 70%;
+      background-color: var(--navy);
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+
+    .resume-subheader {
+      height: 12px;
+      width: 52%;
+      background-color: #cbd5e1;
+      border-radius: 999px;
+      margin-bottom: 30px;
+    }
+
+    .resume-line {
+      height: 11px;
+      background-color: #dbe3ee;
+      border-radius: 999px;
+      margin-bottom: 13px;
+    }
+
+    .resume-line.short {
+      width: 65%;
+    }
+
+    .resume-line.medium {
+      width: 82%;
+    }
+
+    .resume-section-title {
+      height: 14px;
+      width: 38%;
+      background-color: var(--navy);
+      border-radius: 999px;
+      margin: 32px 0 18px;
+    }
+
+    .about-copy {
+      background: var(--white);
+    }
+
+    .eyebrow {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 16px;
+    }
+
+    .about-copy h1 {
+      color: var(--navy);
+      font-size: 42px;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin: 0 0 24px;
+    }
+
+    .about-copy p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin: 0 0 18px;
+    }
+
+    .about-copy strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .about-button-wrapper {
+      margin-top: 30px;
+    }
+
+    /* Other Pages */
     .page-title {
       font-size: 42px;
       margin-bottom: 20px;
@@ -176,7 +295,7 @@
     }
 
     /* Mobile Behavior */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       header {
         padding: 18px 22px;
         flex-direction: column;
@@ -195,6 +314,7 @@
 
       .logo {
         font-size: 18px;
+        text-align: center;
       }
 
       .hero {
@@ -208,6 +328,34 @@
 
       .hero p {
         font-size: 18px;
+      }
+
+      .about-section {
+        padding: 64px 22px;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .resume-placeholder {
+        min-height: auto;
+        padding: 24px;
+        order: 1;
+      }
+
+      .about-copy {
+        order: 2;
+        text-align: left;
+      }
+
+      .about-copy h1 {
+        font-size: 34px;
+      }
+
+      .about-copy p {
+        font-size: 16px;
       }
 
       .page-title {
@@ -247,9 +395,62 @@
       </div>
     </section>
 
-    <section id="about">
-      <h1 class="page-title">About</h1>
-      <p class="page-text">To be included</p>
+    <section id="about" class="about-section">
+      <div class="about-container">
+
+        <div class="resume-placeholder">
+          <div class="resume-card">
+            <div class="resume-header"></div>
+            <div class="resume-subheader"></div>
+
+            <div class="resume-section-title"></div>
+            <div class="resume-line medium"></div>
+            <div class="resume-line"></div>
+            <div class="resume-line short"></div>
+
+            <div class="resume-section-title"></div>
+            <div class="resume-line"></div>
+            <div class="resume-line medium"></div>
+            <div class="resume-line short"></div>
+
+            <div class="resume-section-title"></div>
+            <div class="resume-line medium"></div>
+            <div class="resume-line"></div>
+            <div class="resume-line short"></div>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow">About Career Summit Solutions</div>
+
+          <h1>Helping careerists land their dream job offer.</h1>
+
+          <p>
+            At Career Summit Solutions, we are committed to helping aspiring early-stage careerists pursue their professional goals with clarity, confidence, and purpose. We have helped more than <strong>50 students, entry-level professionals, and mid-level professionals</strong> make progress in their career journeys — and we are just getting started.
+          </p>
+
+          <p>
+            We take career readiness seriously, which is why we founded Career Summit Solutions. With the rise of AI, the job market has changed quickly and dramatically. Recent graduates and early-career professionals are often the most affected, facing fewer entry-level opportunities, higher employer scrutiny, and faster decision-making throughout the hiring process.
+          </p>
+
+          <p>
+            While AI tools can be helpful, applicants who rely on them too heavily often end up with resumes and application materials that feel generic, impersonal, or disconnected from their actual achievements. We believe candidates deserve support that is both practical and authentic.
+          </p>
+
+          <p>
+            That is where we come in. Our nimble team has spent years reviewing resumes, preparing candidates for interviews, and developing job application materials of our own. In other words, we understand what employers look for, and we want to help more candidates apply that knowledge effectively.
+          </p>
+
+          <p>
+            Whether you are a high school student seeking early guidance, a college student pursuing internships, or an entry-to-mid-level professional searching for your next role, visit our Services page to explore our suite of career preparation offerings.
+          </p>
+
+          <div class="about-button-wrapper">
+            <a href="#" class="primary-button" onclick="showPage('services')">View Services</a>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <section id="services">
