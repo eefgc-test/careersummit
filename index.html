@@ -5,39 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Career Summit Solutions</title>
 
+  <!-- Montserrat Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --navy: #0b1f3a;
+      --white: #ffffff;
+      --light-bg: #f7f9fc;
+      --text-dark: #1f2937;
+      --text-muted: #5f6b7a;
+      --border-light: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      color: #222;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
     }
 
+    /* Navigation Bar */
     header {
-      background-color: #1f2937;
-      padding: 18px 40px;
+      background-color: var(--white);
+      border-bottom: 1px solid var(--border-light);
+      padding: 18px 48px;
       display: flex;
-      justify-content: center;
-      gap: 30px;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    header a {
-      color: white;
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--navy);
+      letter-spacing: -0.3px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--navy);
       text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      padding: 8px 12px;
-      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 8px 4px;
+      transition: opacity 0.2s ease;
     }
 
-    header a:hover {
-      background-color: #374151;
+    nav a:hover {
+      opacity: 0.7;
     }
 
     section {
       display: none;
-      min-height: 70vh;
-      padding: 60px 20px;
+      min-height: 75vh;
+      padding: 70px 24px;
       text-align: center;
     }
 
@@ -48,38 +84,143 @@
       align-items: center;
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+      min-height: calc(100vh - 75px);
+      padding: 90px 24px;
     }
 
-    p {
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.08;
+      margin: 0 0 24px;
+      color: var(--navy);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .primary-button {
+      display: inline-block;
+      background-color: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 15px 30px;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(11, 31, 58, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(11, 31, 58, 0.24);
+    }
+
+    .page-title {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .page-text {
       font-size: 20px;
       max-width: 700px;
       line-height: 1.6;
+      color: var(--text-muted);
     }
 
     .services-list {
       list-style: none;
       padding: 0;
-      margin-top: 20px;
+      margin-top: 24px;
+      max-width: 650px;
+      width: 100%;
     }
 
     .services-list li {
-      background: white;
-      margin: 12px 0;
-      padding: 16px 24px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      font-size: 20px;
+      background: var(--white);
+      margin: 14px 0;
+      padding: 20px 26px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--navy);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: #1f2937;
-      color: white;
+      padding: 24px;
+      background-color: var(--white);
+      border-top: 1px solid var(--border-light);
+      color: var(--text-muted);
       font-size: 14px;
+    }
+
+    /* Mobile Behavior */
+    @media (max-width: 768px) {
+      header {
+        padding: 18px 22px;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .hero {
+        padding: 70px 20px;
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .page-title {
+        font-size: 34px;
+      }
+
+      .page-text {
+        font-size: 18px;
+      }
+
+      .services-list li {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
@@ -87,24 +228,32 @@
 <body>
 
   <header>
-    <a href="#" onclick="showPage('home')">Home</a>
-    <a href="#" onclick="showPage('about')">About</a>
-    <a href="#" onclick="showPage('services')">Services</a>
-    <a href="#" onclick="showPage('contact')">Contact</a>
+    <div class="logo">Career Summit Solutions</div>
+
+    <nav>
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('about')">About</a>
+      <a href="#" onclick="showPage('services')">Services</a>
+      <a href="#" onclick="showPage('contact')">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section id="home" class="active">
-      <h1>Career Summit Solutions!</h1>
+    <section id="home" class="active hero">
+      <div class="hero-content">
+        <h1>Secure your dream job today!</h1>
+        <p>We're here to help students and early-career professionals stand out in a competitive job market.</p>
+        <a href="#" class="primary-button" onclick="showPage('services')">View Services</a>
+      </div>
     </section>
 
     <section id="about">
-      <h1>About</h1>
-      <p>To be included</p>
+      <h1 class="page-title">About</h1>
+      <p class="page-text">To be included</p>
     </section>
 
     <section id="services">
-      <h1>Services</h1>
+      <h1 class="page-title">Services</h1>
       <ul class="services-list">
         <li>Resume Guide and Templates</li>
         <li>Resume Editing</li>
@@ -113,8 +262,8 @@
     </section>
 
     <section id="contact">
-      <h1>Contact</h1>
-      <p>TBD</p>
+      <h1 class="page-title">Contact</h1>
+      <p class="page-text">TBD</p>
     </section>
   </main>
 
@@ -131,6 +280,11 @@
       });
 
       document.getElementById(pageId).classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
   </script>
 
