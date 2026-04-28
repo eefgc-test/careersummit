@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Summit Solutions</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #222;
+    }
+
+    header {
+      background-color: #1f2937;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    header a:hover {
+      background-color: #374151;
+    }
+
+    section {
+      display: none;
+      min-height: 70vh;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .services-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .services-list li {
+      background: white;
+      margin: 12px 0;
+      padding: 16px 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      font-size: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1f2937;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('about')">About</a>
+    <a href="#" onclick="showPage('services')">Services</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
+  </header>
+
+  <main>
+    <section id="home" class="active">
+      <h1>Career Summit Solutions!</h1>
+    </section>
+
+    <section id="about">
+      <h1>About</h1>
+      <p>To be included</p>
+    </section>
+
+    <section id="services">
+      <h1>Services</h1>
+      <ul class="services-list">
+        <li>Resume Guide and Templates</li>
+        <li>Resume Editing</li>
+        <li>Mock Interview</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h1>Contact</h1>
+      <p>TBD</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Career Summit Solutions. All rights reserved.
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      const sections = document.querySelectorAll("section");
+
+      sections.forEach(section => {
+        section.classList.remove("active");
+      });
+
+      document.getElementById(pageId).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
